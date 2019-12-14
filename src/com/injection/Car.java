@@ -1,26 +1,34 @@
 package com.injection;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.List;
-
 public class Car {
   private String brand;
   private double price;
   private int maxSpeed;
 
+  public Car(String brand) {
+    System.out.println("use Car band arg constructor: " + brand);
+    this.brand = brand;
+  }
+
   public Car(String brand, double price) {
+    System.out.println("use Car band, price arg constructor");
     this.brand = brand;
     this.price = price;
   }
 
   public Car(String brand, int maxSpeed) {
+    System.out.println("use Car band, maxSpeed arg constructor");
     this.brand = brand;
     this.maxSpeed = maxSpeed;
   }
 
+  public void setPrice(double price) {
+    System.out.println("set Car price: " + price);
+    this.price = price;
+  }
+
   public void setMaxSpeed(int maxSpeed) {
+    System.out.println("set Car maxSpeed: " + maxSpeed);
     this.maxSpeed = maxSpeed;
   }
 
@@ -33,13 +41,4 @@ public class Car {
       '}';
   }
 
-  public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("com/injection/injectionApplicationContext.xml");
-    Car bmw = (Car) context.getBean("bmw");
-    Car bench = (Car) context.getBean("bench");
-    List<Car> cars = (List<Car>) context.getBean("cars");
-    System.out.println(cars);
-//        System.out.println(bmw);
-//        System.out.println(bench);
-  }
 }

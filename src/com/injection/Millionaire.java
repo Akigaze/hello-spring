@@ -1,8 +1,5 @@
 package com.injection;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import java.util.List;
 import java.util.Map;
 
@@ -14,45 +11,27 @@ public class Millionaire {
   private Map<String, Person> servants;
 
   public Millionaire() {
+    System.out.println("use Millionaire non argument constructor");
   }
 
   public Millionaire(String name, int age, long asset, List<Car> cars) {
+    System.out.println("use Millionaire name, age, asset, cars arguments constructor");
     this.name = name;
     this.age = age;
     this.asset = asset;
     this.cars = cars;
   }
 
-  public String getName() {
-    return name;
-  }
-
   public void setName(String name) {
     this.name = name;
-  }
-
-  public int getAge() {
-    return age;
   }
 
   public void setAge(int age) {
     this.age = age;
   }
 
-  public long getAsset() {
-    return asset;
-  }
-
   public void setAsset(long asset) {
     this.asset = asset;
-  }
-
-  public List<Car> getCars() {
-    return cars;
-  }
-
-  public Map<String, Person> getServants() {
-    return servants;
   }
 
   public void setServants(Map<String, Person> servants) {
@@ -65,21 +44,14 @@ public class Millionaire {
 
   @Override
   public String toString() {
-    return "Millionaire:\n\r" +
-      "name= " + name +
-      "\n\rage= " + age +
-      "\n\rasset= " + asset +
-      "\n\rcars= " + cars +
-      "\n\rservant= " + servants;
+    return "Millionaire{" +
+      "name='" + name + '\'' +
+      ", age=" + age +
+      ", asset=" + asset +
+      ", cars=" + cars +
+      ", servants=" + servants +
+      '}';
   }
 
-  public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("com/injection/injectionApplicationContext.xml");
-//        Millionaire laoWang = (Millionaire) context.getBean("LaoWang");
-//        Millionaire xiaoWang = (Millionaire) context.getBean("xiao-wang");
-    Millionaire maYun = (Millionaire) context.getBean("ma-yun");
-//        System.out.println(laoWang);
-//        System.out.println(xiaoWang);
-    System.out.println(maYun);
-  }
 }
+

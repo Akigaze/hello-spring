@@ -1,32 +1,23 @@
 package com.injection;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 public class Person {
   private String name;
   private int age;
   private Car car;
 
   public Person() {
+    System.out.println("use Person no arg constructor");
   }
 
   public Person(String name, int age, Car car) {
+    System.out.println("use Person all args constructor");
     this.name = name;
     this.age = age;
     this.car = car;
   }
 
-  public String getName() {
-    return name;
-  }
-
   public void setName(String name) {
     this.name = name;
-  }
-
-  public int getAge() {
-    return age;
   }
 
   public void setAge(int age) {
@@ -50,14 +41,5 @@ public class Person {
       '}';
   }
 
-  public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("com/injection/injectionApplicationContext.xml");
-    Person tom = (Person) context.getBean("Tom");
-    Person jam = (Person) context.getBean("Jam");
-    System.out.println(tom);
-    System.out.println(jam);
-
-    Person sam = (Person) context.getBean("Sam");
-    System.out.println(sam);
-  }
 }
+
