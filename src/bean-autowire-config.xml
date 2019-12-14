@@ -2,15 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="p-address" class="com.beans.autowire.Address"
-          p:city="Guangzhou"  abstract="true"/>
-    <bean id="address" p:street="Wushan" p:number="1024" parent="p-address"/>
-    <bean id="boss" class="com.beans.autowire.Entrepreneur"
-          p:name="Ma Yunyun" p:age="55" p:asset="10000000"/>
-    <bean id="qi-lin-nan" class="com.beans.autowire.Shop"
-          p:name="Qi Lin Nan Shop" p:open="true" autowire="byName" scope="prototype"/>
-    <bean id="wu-shan" class="com.beans.autowire.Shop"
-          p:name="Wu Shan Shop" p:open="false" autowire="byType"/>
-    <bean id="tian-mao" class="com.beans.autowire.Shop"
-          p:name="Tian Mao Shop" p:open="true" p:address-ref="address" />
+  <bean id="p-address" class="com.beans.autowire.Address"
+        p:city="Guangzhou" abstract="true"/>
+  <bean id="address" p:street="Wushan" p:number="1024" parent="p-address"/>
+  <bean id="boss" class="com.beans.autowire.Entrepreneur"
+        p:name="Ma Yunyun" p:age="55" p:asset="10000000"/>
+  <bean id="qi-lin-nan" class="com.beans.autowire.Shop"
+        p:name="Qi Lin Nan Shop" p:open="true" autowire="byName" scope="prototype"/>
+  <bean id="wu-shan" class="com.beans.autowire.Shop"
+        p:name="Wu Shan Shop" p:open="false" autowire="byType"/>
+  <bean id="tian-mao" class="com.beans.autowire.Shop"
+        p:name="Tian Mao Shop" p:open="true" p:address-ref="address"/>
 </beans>

@@ -6,11 +6,11 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:property-placeholder location="classpath:com/beans/db/db-connection.properties"/>
-    <bean id="data-source" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="user" value="${user}"/>
-        <property name="password" value="${password}"/>
-        <property name="driverClass" value="${driver}"/>
-        <property name="jdbcUrl" value="${url}"/>
-    </bean>
+  <context:property-placeholder location="classpath:com/beans/db/db-connection.properties"/>
+  <bean id="data-source" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+    <property name="user" value="${user}"/>
+    <property name="password" value="${password}"/>
+    <property name="driverClass" value="${driver}"/>
+    <property name="jdbcUrl" value="${url}"/>
+  </bean>
 </beans>
