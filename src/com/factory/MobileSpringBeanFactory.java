@@ -2,7 +2,7 @@ package com.factory;
 
 import org.springframework.beans.factory.FactoryBean;
 
-public class MobileBeanFactory implements FactoryBean<Mobile> {
+public class MobileSpringBeanFactory implements FactoryBean<Mobile> {
   private Mobile mobile = new Mobile();
   private String brand;
 
@@ -14,9 +14,12 @@ public class MobileBeanFactory implements FactoryBean<Mobile> {
     this.brand = brand;
   }
 
+  //单例模式下该方法只会被执行一次
   @Override
-  public Mobile getObject() throws Exception {
+  public Mobile getObject() {
+    System.out.println("MobileSpringBeanFactory: get bean");
     this.mobile.setBrand(this.brand);
+    this.mobile.setFactory("factory implements org.springframework.beans.factory.FactoryBean");
     return this.mobile;
   }
 
@@ -29,4 +32,6 @@ public class MobileBeanFactory implements FactoryBean<Mobile> {
   public boolean isSingleton() {
     return true;
   }
+
 }
+

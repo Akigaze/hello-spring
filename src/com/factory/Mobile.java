@@ -1,12 +1,14 @@
 package com.factory;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 public class Mobile {
   private String brand;
   private int price;
   private double size;
+  private String factory;
+
+  public Mobile() {
+    System.out.println("use Mobile no args constructor");
+  }
 
   public String getBrand() {
     return brand;
@@ -16,20 +18,16 @@ public class Mobile {
     this.brand = brand;
   }
 
-  public int getPrice() {
-    return price;
-  }
-
-  public void setPrice(int price) {
+  void setPrice(int price) {
     this.price = price;
   }
 
-  public double getSize() {
-    return size;
+  void setSize(double size) {
+    this.size = size;
   }
 
-  public void setSize(double size) {
-    this.size = size;
+  void setFactory(String factory) {
+    this.factory = factory;
   }
 
   @Override
@@ -38,18 +36,7 @@ public class Mobile {
       "brand='" + brand + '\'' +
       ", price=" + price +
       ", size=" + size +
+      ", factory='" + factory + '\'' +
       '}';
-  }
-
-  public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("factory-bean.xml");
-    Mobile huawei = (Mobile) context.getBean("huawei");
-    System.out.println(huawei);
-
-    Mobile vivo = (Mobile) context.getBean("vivo");
-    System.out.println(vivo);
-
-    Mobile mi = (Mobile) context.getBean("mi");
-    System.out.println(mi);
   }
 }
