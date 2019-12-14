@@ -10,10 +10,6 @@ public class HelloSpring {
     System.out.println("use HelloSpring no args constructor");
   }
 
-  public String getName() {
-    return name;
-  }
-
   public void setName(String name) {
     System.out.println("set HelloSpring name: " + name);
     this.name = name;
@@ -26,6 +22,8 @@ public class HelloSpring {
   public static void main(String[] args) {
     String configPath = "classpath:com/hello/applicationContext.xml";
     ApplicationContext context = new ClassPathXmlApplicationContext(configPath);
+
+    System.out.println("------ singleton bean -------");
 
     HelloSpring spring1 = (HelloSpring) context.getBean("spring");
     HelloSpring spring2 = context.getBean(HelloSpring.class);
