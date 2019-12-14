@@ -10,6 +10,7 @@
   <!--bean标签中使用constructor-arg标签，可以根据constructor-arg的数量，index，type和顺序选用相应的构造方法-->
   <bean id="bmw" class="com.injection.Car">
     <!--对于复杂的值，可以使用value标签, 有特殊符号时，要想用 <![CDATA[....]]> 包起来-->
+    <!--value标签只能用于基本类型，字符串或包装类型的赋值-->
     <constructor-arg index="0">
       <value><![CDATA[<BMW^>]]></value>
     </constructor-arg>
