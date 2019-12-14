@@ -1,4 +1,4 @@
-package com.beans.injection;
+package com.injection;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -24,7 +24,7 @@ public class DataSource {
   }
 
   public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("com/injection/injectionApplicationContext.xml");
     DataSource mysqlConn = (DataSource) context.getBean("mysql-config");
     System.out.println(mysqlConn);
   }

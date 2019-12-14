@@ -1,4 +1,4 @@
-package com.beans.injection;
+package com.injection;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -51,7 +51,7 @@ public class Person {
   }
 
   public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("com/injection/injectionApplicationContext.xml");
     Person tom = (Person) context.getBean("Tom");
     Person jam = (Person) context.getBean("Jam");
     System.out.println(tom);

@@ -8,24 +8,24 @@
        http://www.springframework.org/schema/util
        http://www.springframework.org/schema/util/spring-util.xsd">
 
-  <bean id="bmw" class="com.beans.injection.Car">
+  <bean id="bmw" class="com.injection.Car">
     <constructor-arg index="0">
       <value><![CDATA[<BMW^>]]></value>
     </constructor-arg>
     <constructor-arg value="200000" index="1" type="double"/>
   </bean>
-  <bean id="bench" class="com.beans.injection.Car">
+  <bean id="bench" class="com.injection.Car">
     <constructor-arg value="Bench" index="0"/>
     <constructor-arg value="200" type="int"/>
   </bean>
 
-  <bean id="Tom" class="com.beans.injection.Person">
+  <bean id="Tom" class="com.injection.Person">
     <property name="name" value="Tom"/>
     <property name="age" value="25"/>
     <property name="car" ref="bench"/>
   </bean>
 
-  <bean id="Jam" class="com.beans.injection.Person">
+  <bean id="Jam" class="com.injection.Person">
     <property name="name" value="Jam"/>
     <property name="age" value="30"/>
     <property name="car">
@@ -34,18 +34,18 @@
     <property name="car.maxSpeed" value="3000"/>
   </bean>
 
-  <bean id="Sam" class="com.beans.injection.Person">
+  <bean id="Sam" class="com.injection.Person">
     <constructor-arg value="Sam"/>
     <constructor-arg value="40"/>
     <constructor-arg>
-      <bean class="com.beans.injection.Car">
+      <bean class="com.injection.Car">
         <constructor-arg value="Bench"/>
         <constructor-arg value="200" type="int"/>
       </bean>
     </constructor-arg>
   </bean>
 
-  <bean id="LaoWang" class="com.beans.injection.Millionaire">
+  <bean id="LaoWang" class="com.injection.Millionaire">
     <constructor-arg type="java.lang.String" value="Lao Wang"/>
     <constructor-arg type="int" value="50"/>
     <constructor-arg type="long" value="100000000"/>
@@ -53,7 +53,7 @@
       <list>
         <ref bean="bmw"/>
         <ref bean="bench"/>
-        <bean class="com.beans.injection.Car">
+        <bean class="com.injection.Car">
           <constructor-arg value="Honda" index="0"/>
           <constructor-arg value="250" type="int"/>
         </bean>
@@ -64,7 +64,7 @@
         <entry key="hong" value-ref="Jam"/>
         <entry key="huang" value-ref="Sam"/>
         <entry key="blue">
-          <bean class="com.beans.injection.Person">
+          <bean class="com.injection.Person">
             <property name="name" value="Kid"/>
             <property name="age" value="18"/>
             <property name="car">
@@ -76,7 +76,7 @@
     </property>
   </bean>
 
-  <bean id="mysql-config" class="com.beans.injection.DataSource">
+  <bean id="mysql-config" class="com.injection.DataSource">
     <property name="dbProps">
       <props>
         <prop key="user">root</prop>
@@ -90,23 +90,23 @@
   <util:list id="cars">
     <ref bean="bench"/>
     <ref bean="bmw"/>
-    <bean id="toyota" class="com.beans.injection.Car">
+    <bean id="toyota" class="com.injection.Car">
       <constructor-arg value="Toyota" index="0"/>
       <constructor-arg value="180" type="int"/>
     </bean>
   </util:list>
 
-  <bean id="xiao-wang" class="com.beans.injection.Millionaire">
+  <bean id="xiao-wang" class="com.injection.Millionaire">
     <constructor-arg type="java.lang.String" value="Xiao Wang"/>
     <constructor-arg type="int" value="28"/>
     <constructor-arg type="long" value="200000"/>
     <constructor-arg type="java.util.List" ref="cars"/>
   </bean>
 
-  <bean id="ma-yun" class="com.beans.injection.Millionaire" p:name="Ma Yun"
+  <bean id="ma-yun" class="com.injection.Millionaire" p:name="Ma Yun"
         p:age="50" p:asset="100000000" depends-on="hao-cars" p:cars-ref="cars"/>
 
-  <bean id="hao-cars" class="com.beans.injection.Car" p:maxSpeed="122">
+  <bean id="hao-cars" class="com.injection.Car" p:maxSpeed="122">
     <constructor-arg type="java.lang.String" value="Toyota"/>
     <constructor-arg type="double" value="50000"/>
   </bean>

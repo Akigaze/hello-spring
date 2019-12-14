@@ -1,4 +1,4 @@
-package com.beans.injection;
+package com.injection;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -74,7 +74,7 @@ public class Millionaire {
   }
 
   public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("com/injection/injectionApplicationContext.xml");
 //        Millionaire laoWang = (Millionaire) context.getBean("LaoWang");
 //        Millionaire xiaoWang = (Millionaire) context.getBean("xiao-wang");
     Millionaire maYun = (Millionaire) context.getBean("ma-yun");

@@ -1,4 +1,4 @@
-package com.beans.injection;
+package com.injection;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -34,7 +34,7 @@ public class Car {
   }
 
   public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("com/injection/injectionApplicationContext.xml");
     Car bmw = (Car) context.getBean("bmw");
     Car bench = (Car) context.getBean("bench");
     List<Car> cars = (List<Car>) context.getBean("cars");
