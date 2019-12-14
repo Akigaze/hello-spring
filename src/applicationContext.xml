@@ -7,9 +7,6 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/util
        http://www.springframework.org/schema/util/spring-util.xsd">
-    <bean id="spring" class="com.hello.HelloSpring">
-        <property name="name" value="Spring"/>
-    </bean>
 
     <bean id="bmw" class="com.beans.injection.Car">
         <constructor-arg index="0">
