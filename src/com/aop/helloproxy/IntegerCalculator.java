@@ -1,6 +1,8 @@
 package com.aop.helloproxy;
 
-public class IntegerCalculator implements Calculator<Integer, Integer> {
+import com.aop.universal.Calculator;
+
+public class IntegerCalculator implements Calculator<Integer> {
 
     private IntegerCalculator() {
         System.out.println("new integer calculator");

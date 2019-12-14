@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id="stringCalculator" class="com.aop.aspectj.StringCalculator"/>
+    <bean id="logAspect" class="com.aop.aspectj.LogAspect"/>
+
+    <aop:config>
+        <aop:pointcut id="in-door" expression="execution(public * com.aop.aspectj.StringCalculator.*(..))"/>
+
+        <aop:aspect ref="logAspect" order="1">
+            <aop:before method="logBefore" pointcut-ref="in-door"/>
+            <aop:after method="logAfter" pointcut-ref="in-door"/>
+            <aop:after-returning method="logReturn" pointcut-ref="in-door" returning="result"/>
+            <aop:after-throwing method="logException" pointcut-ref="in-door" throwing="e"/>
+            <aop:around method="logAround"  pointcut-ref="in-door" />
+        </aop:aspect>
+    </aop:config>
+</beans>
