@@ -1,28 +1,20 @@
-package com.beans.autowire;
+package com.autowire;
 
-public class Entrepreneur {
+public class Boss {
   private String name;
   private int age;
   private long asset;
 
-  public String getName() {
-    return name;
+  public Boss() {
+    System.out.println("use Boss no args constructor");
   }
 
   public void setName(String name) {
     this.name = name;
   }
 
-  public int getAge() {
-    return age;
-  }
-
   public void setAge(int age) {
     this.age = age;
-  }
-
-  public long getAsset() {
-    return asset;
   }
 
   public void setAsset(long asset) {
@@ -31,10 +23,11 @@ public class Entrepreneur {
 
   @Override
   public String toString() {
-    return "Entrepreneur{" +
+    return "Boss{" +
       "name='" + name + '\'' +
       ", age=" + age +
       ", asset=" + asset +
       '}';
   }
+
 }
