@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <!--bean标签默认使用无参构造方法构建对象-->
+  <!--Spring IOC管理的bean默认是单例的 singleton, 在初始化IOC容器是就会构建对象-->
+  <bean id="spring" class="com.ioc.hello.HelloSpring">
+    <!--property 使用setter注入属性-->
+    <property name="name" value="Spring"/>
+  </bean>
+</beans>

@@ -3,17 +3,32 @@
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset2" name="injection" removed="false">
-          <file>file://$MODULE_DIR$/src/com/injection/injectionApplicationContext.xml</file>
-        </fileset>
-        <fileset id="fileset3" name="lifecycle" removed="false">
-          <file>file://$MODULE_DIR$/src/com/lifecycle/lifecycleApplicationContext.xml</file>
-        </fileset>
-        <fileset id="fileset4" name="spel" removed="false">
-          <file>file://$MODULE_DIR$/src/com/spel/spelApplicationContext.xml</file>
-        </fileset>
         <fileset id="fileset5" name="PropertiesApplicationContext" removed="false">
           <file>file://$MODULE_DIR$/src/com/properties/propertiesApplicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset" name="DbApplicationContext" removed="false">
+          <file>file://$MODULE_DIR$/src/com/db/dbApplicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset6" name="AutowireApplicationContext" removed="false">
+          <file>file://$MODULE_DIR$/src/com/autowire/autowireApplicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset7" name="FactoryApplicationContext" removed="false">
+          <file>file://$MODULE_DIR$/src/com/factory/factoryApplicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset8" name="ApplicationContext" removed="false">
+          <file>file://$MODULE_DIR$/src/com/hello/applicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset9" name="ScopeApplicationContext" removed="false">
+          <file>file://$MODULE_DIR$/src/com/scope/scopeApplicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset2" name="LifecycleApplicationContext" removed="false">
+          <file>file://$MODULE_DIR$/src/com/lifecycle/lifecycleApplicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset3" name="InjectionApplicationContext" removed="false">
+          <file>file://$MODULE_DIR$/src/com/injection/injectionApplicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset4" name="SpelApplicationContext" removed="false">
+          <file>file://$MODULE_DIR$/src/com/spel/spelApplicationContext.xml</file>
         </fileset>
       </configuration>
     </facet>

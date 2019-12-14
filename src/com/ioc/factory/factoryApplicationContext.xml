@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <!--使用工厂方法时，可以通过bean标签的class, factory-bean, factory-method 属性指定工厂相关的信息-->
+  <!--使用时需要将class指定成对应的工厂类，或者factory-bean指定工厂的实例， 这两个只需要设置一个就可以-->
+  <!--可以通过scope属性控制bean是否是单例，这不需要工厂类自己处理，spring会帮你处理-->
+
+  <!--使用静态工厂方法构建bean不用创建工厂对象-->
+  <!--使用静态工厂方法时，要将class指定为静态工厂的类-->
+  <bean id="huawei" class="com.ioc.factory.StaticMobileFactory" factory-method="produceMobile">
+    <constructor-arg index="0" value="Huawei"/>
+    <constructor-arg index="1" value="2000"/>
+    <constructor-arg index="2" value="5.2"/>
+  </bean>
+
+  <!--使用实例工厂方法构建bean时需要先创建工厂对象-->
+  <bean id="instance-factory" class="com.ioc.factory.InstanceMobileFactory"/>
+  <!--使用工厂方法创建bean时用使用constructor-arg标签进行传参-->
+  <bean id="vivo" factory-bean="instance-factory" factory-method="produceMobile">
+    <constructor-arg index="0" value="vivo"/>
+    <constructor-arg index="1" value="1000"/>
+    <constructor-arg index="2" value="6.5"/>
+  </bean>
+
+  <!--MobileBeanFactory 实现的spring提供的FactoryBean<?>接口，获取具体bean实例由getObject方法提供-->
+  <bean id="mi" class="com.ioc.factory.MobileSpringBeanFactory">
+    <property name="brand" value="Xiao Mi"/>
+  </bean>
+
+</beans>

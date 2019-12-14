@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+  <!--context:property-placeholder读取资源文件作为加载IOC容器的上下文-->
+  <!--使用 ${} 可以获取上下文中的变量值-->
+  <context:property-placeholder location="classpath:com/ioc/db/db-connection.properties"/>
+  <!--使用 c3p0 数据源-->
+  <!--
+    需要依赖的包：
+    c3p0-0.9.5.2.jar
+    mchange-commons-java-0.2.11.jar
+    mysql-connector-java-5.1.45-bin.jar
+  -->
+  <bean id="data-source" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+    <property name="user" value="${user}"/>
+    <property name="password" value="${password}"/>
+    <property name="driverClass" value="${driver}"/>
+    <property name="jdbcUrl" value="${url}"/>
+  </bean>
+</beans>
