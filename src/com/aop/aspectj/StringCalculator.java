@@ -20,13 +20,13 @@ public class StringCalculator implements Calculator<String> {
     boolean moreChar = true;
     int i = 0;
     StringBuilder builder = new StringBuilder();
-    while (moreChar){
+    while (moreChar) {
       moreChar = false;
-      if(multiplicand.length() > i){
+      if (multiplicand.length() > i) {
         moreChar = true;
         builder.append(multiplicand.charAt(i));
       }
-      if(multiplier.length() > i){
+      if (multiplier.length() > i) {
         moreChar = true;
         builder.append(multiplier.charAt(i));
       }
@@ -39,15 +39,15 @@ public class StringCalculator implements Calculator<String> {
   public String divide(String dividend, String divisor) {
     int i = 0;
     StringBuilder builder = new StringBuilder(dividend);
-    while (true){
-      if(divisor.length() > i){
+    while (true) {
+      if (divisor.length() > i) {
         char remover = divisor.charAt(i);
         int index = builder.indexOf(String.valueOf(remover));
-        if (index > -1){
+        if (index > -1) {
           builder.deleteCharAt(index);
         }
       }
-      if (divisor.length() <= i || builder.length() == 0){
+      if (divisor.length() <= i || builder.length() == 0) {
         break;
       }
       i++;
