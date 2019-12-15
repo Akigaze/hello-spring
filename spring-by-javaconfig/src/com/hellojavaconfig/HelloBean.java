@@ -1,4 +1,4 @@
-package hellojavaconfig;
+package com.hellojavaconfig;
 
 public class HelloBean {
   private String text;

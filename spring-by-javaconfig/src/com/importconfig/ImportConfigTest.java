@@ -1,4 +1,4 @@
-package importconfig;
+package com.importconfig;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

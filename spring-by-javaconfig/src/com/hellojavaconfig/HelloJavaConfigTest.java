@@ -1,4 +1,4 @@
-package hellojavaconfig;
+package com.hellojavaconfig;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

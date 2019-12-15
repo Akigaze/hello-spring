@@ -1,4 +1,4 @@
-package autowire;
+package com.autowire;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

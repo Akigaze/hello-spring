@@ -1,4 +1,4 @@
-package xml;
+package com.xml;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ImportResource;
 /*
 @ImportResource 注解能直接将xml配置中的bean加载到java配置类中
 */
-@ImportResource("classpath:xml/javaconfigXmlApplicationContext.xml")
+@ImportResource("classpath:com/xml/javaconfigXmlApplicationContext.xml")
 public class JavaConfigXmlConfig {
   @Bean
   public CDPlayer player() {

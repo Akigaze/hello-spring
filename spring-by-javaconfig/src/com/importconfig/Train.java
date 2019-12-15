@@ -1,4 +1,4 @@
-package importconfig;
+package com.importconfig;
 
 public class Train {
   public void run() {

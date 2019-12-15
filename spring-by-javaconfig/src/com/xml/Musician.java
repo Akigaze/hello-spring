@@ -1,4 +1,4 @@
-package xml;
+package com.xml;
 
 public class Musician {
   private String name;

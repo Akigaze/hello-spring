@@ -1,4 +1,4 @@
-package xml;
+package com.xml;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

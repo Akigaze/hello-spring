@@ -1,4 +1,4 @@
-package autowire;
+package com.autowire;
 
 public class House {
   private Integer number;

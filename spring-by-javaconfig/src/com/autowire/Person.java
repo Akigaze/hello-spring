@@ -1,4 +1,4 @@
-package autowire;
+package com.autowire;
 
 public class Person {
   private String name;
