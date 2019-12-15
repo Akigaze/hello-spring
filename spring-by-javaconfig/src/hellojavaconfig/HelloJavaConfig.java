@@ -16,7 +16,7 @@ public class HelloJavaConfig {
   默认情况加@Bean使用单例模式，在初始化IOC容器是就会构建bean对象
   */
   @Bean
-  public HelloBean helloBean(){
+  public HelloBean helloBean() {
     System.out.println("HelloJavaConfig.helloBean: get HelloBean object");
     HelloBean bean = new HelloBean();
     bean.setText("Morning");

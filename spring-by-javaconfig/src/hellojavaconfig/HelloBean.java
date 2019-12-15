@@ -12,7 +12,7 @@ public class HelloBean {
   }
 
   void greet() {
-    System.out.println("Hello, "+this.text);
+    System.out.println("Hello, " + this.text);
   }
 
 }
