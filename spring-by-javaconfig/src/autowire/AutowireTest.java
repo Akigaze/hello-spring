@@ -9,9 +9,12 @@ public class AutowireTest {
 
     Person person = (Person) context.getBean("person");
     House house = (House) context.getBean("house");
+    House oldHouse = (House) context.getBean("oldHouse");
 
     System.out.println(person);
     System.out.println(house);
+    System.out.println(oldHouse);
     System.out.println(house.getHost() == person);
+    System.out.println(oldHouse.getHost() == person);
   }
 }
