@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <!--
+    context:component-scan 标签指定组件扫描的相关配置
+    base-package属性指定扫描的包，包括包中的类和子包中的类
+    当需要扫描多个不嵌套的包时，要添加多个 context:component-scan 标签，每个标签指定一个包
+  -->
+  <context:component-scan base-package="com.helloannotation"/>
+  <bean id="myEntity" class="com.helloannotation.Entity" p:name="My Entity"/>
+</beans>
