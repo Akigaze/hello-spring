@@ -12,7 +12,7 @@
     <!-- aop:pointcut 标签，定义切入点，哪些方法要添加切面-->
     <!--expression属性用于匹配切面，包含 "*", "." 等通配符-->
     <!--参考：https://www.baeldung.com/spring-aop-pointcut-tutorial-->
-    <aop:pointcut id="aspect" expression="execution(public * com.aop.aspectj.StringCalculator.*(..))"/>
+    <aop:pointcut id="aspect" expression="execution(public * com.aop.universal.Calculator.*(..))"/>
 
     <!--aop:aspect 标签将某个对象用于AOP的切面-->
     <!--当添加多个切面时，可以使用 order 属性设置优先级-->

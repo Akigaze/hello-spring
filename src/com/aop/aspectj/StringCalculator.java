@@ -61,8 +61,12 @@ public class StringCalculator implements Calculator<String> {
   }
 
   public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("com/aop/aspectj/aspectjApplicationContext.xml");
+    String configLocation = "com/aop/aspectj/aspectjApplicationContext.xml";
+    ApplicationContext context = new ClassPathXmlApplicationContext(configLocation);
     Calculator calculator1 = (Calculator) context.getBean("stringCalculator");
+    //只有被Spring IOC容器管理的对象才会添加切面
+    //Calculator calculator1 = new StringCalculator();
+
     System.out.println("------ add ------");
     calculator1.add("hello", "world");
     System.out.println("\n------ subtract ------\n");
