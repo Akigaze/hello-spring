@@ -1,4 +1,4 @@
-package com.componentscan.inner;
+package com.componentscan.exclude;
 
 import org.springframework.stereotype.Component;
 

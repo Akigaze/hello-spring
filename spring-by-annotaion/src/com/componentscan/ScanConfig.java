@@ -1,6 +1,6 @@
 package com.componentscan;
 
-import com.componentscan.inner.Excavator;
+import com.componentscan.exclude.Excavator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ excludeFilters属性可以以指定的规则排除某些对某些包或类的扫
 */
 //似乎@ComponentScan已经具备了@Configuration的功能????
 @ComponentScan(basePackages = "com.componentscan",
-  excludeFilters = {@ComponentScan.Filter(type = FilterType.REGEX, pattern = "com\\.componentscan\\.inner\\..*")}
+  excludeFilters = {@ComponentScan.Filter(type = FilterType.REGEX, pattern = "com\\.componentscan\\.exclude\\..*")}
 )
 public class ScanConfig {
   @Bean

@@ -1,6 +1,6 @@
 package com.componentscan;
 
-import com.componentscan.inner.Excavator;
+import com.componentscan.exclude.Excavator;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
