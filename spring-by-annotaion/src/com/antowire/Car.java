@@ -3,6 +3,10 @@ package com.antowire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/*
+@Autowired 注解支持属性注入，构造方法注入和setter注入
+ */
+
 @Component
 public class Car {
   private Engine plainEngine;

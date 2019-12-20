@@ -11,7 +11,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class HelloJavaConfig {
   /*
-  @Bean 注解与xml配置的bean标签类似
+  @Bean 注解与xml配置的bean标签类似，只能在标注了@Configuration的类中使用
+  该注解标注的是一个工厂方法
   注解要作用在方法上，方法名相当于bean的id
   默认情况加@Bean使用单例模式，在初始化IOC容器是就会构建bean对象
   */
@@ -23,4 +24,14 @@ public class HelloJavaConfig {
     return bean;
   }
 
+  /*
+    @Bean 注解的name或value属性可以设置bean的名称，设置时工厂方法的方法名将不再作为bean的名字
+  */
+  @Bean("helloWorld")
+  public HelloBean anotherHelloBean() {
+    System.out.println("HelloJavaConfig.anotherHelloBean: get HelloBean object, but the bean name is helloWorld");
+    HelloBean bean = new HelloBean();
+    bean.setText("Hello World");
+    return bean;
+  }
 }

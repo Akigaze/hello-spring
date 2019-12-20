@@ -15,6 +15,9 @@ public class HelloJavaConfigTest {
 
     helloBean.greet();
     otherHelloBean.greet();
-  }
 
+    HelloBean helloWorld = (HelloBean) context.getBean("helloWorld");
+    helloWorld.greet();
+    System.out.println(context.containsBean("anotherHelloBean"));
+  }
 }
