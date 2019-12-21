@@ -25,7 +25,7 @@ public class Biker {
     this.vehicle = vehicle;
   }
 
-  public Vehicle getVehicle() {
+  Vehicle getVehicle() {
     return vehicle;
   }
 

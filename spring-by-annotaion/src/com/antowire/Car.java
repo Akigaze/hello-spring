@@ -45,15 +45,15 @@ public class Car {
     this.plainEngine = plainEngine;
   }
 
-  public Engine getPlainEngine() {
+  Engine getPlainEngine() {
     return plainEngine;
   }
 
-  public Engine getAutowireEngine() {
+  Engine getAutowireEngine() {
     return autowireEngine;
   }
 
-  public Engine getConstructorEngine() {
+  Engine getConstructorEngine() {
     return constructorEngine;
   }
 

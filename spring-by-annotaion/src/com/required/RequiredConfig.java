@@ -31,7 +31,7 @@ class Paper {
 class Book {
   private Paper paper;
 
-  public Paper getPaper() {
+  Paper getPaper() {
     return paper;
   }
 

@@ -1,5 +1,4 @@
 package com.antowire;
 
-public class Wheel {
-
+class Wheel {
 }

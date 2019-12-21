@@ -13,10 +13,6 @@ import org.springframework.stereotype.Component;
 public class Laptop {
   private CPU cpu;
 
-  public Laptop() {
-    System.out.println("Laptop non argument constructor");
-  }
-
   @Autowired
   public Laptop(@Lazy CPU cpu) {
     System.out.println("Laptop argument with cpu");
@@ -25,10 +21,6 @@ public class Laptop {
 
   CPU getCpu() {
     return cpu;
-  }
-
-  public void setCpu(CPU cpu) {
-    this.cpu = cpu;
   }
 }
 

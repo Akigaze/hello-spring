@@ -30,10 +30,11 @@ public class QualifierConfig {
   }
 }
 
-class Bike implements Vehicle {
-
+interface Vehicle {
 }
 
-class Car implements Vehicle {
+class Bike implements Vehicle{
+}
 
+class Car implements Vehicle{
 }

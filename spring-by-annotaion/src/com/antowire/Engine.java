@@ -4,7 +4,7 @@ package com.antowire;
 public class Engine {
   private String band;
 
-  public Engine(String band) {
+  Engine(String band) {
     this.band = band;
   }
 
