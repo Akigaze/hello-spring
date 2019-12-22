@@ -9,3 +9,6 @@ Spring AOP depend on:
 - spring-context-5.0.8.RELEASE.jar
 - spring-core-5.0.8.RELEASE.jar
 - spring-expression-5.0.8.RELEASE.jar
+
+AOP Pointcut expression：
+- https://www.baeldung.com/spring-aop-pointcut-tutorial
