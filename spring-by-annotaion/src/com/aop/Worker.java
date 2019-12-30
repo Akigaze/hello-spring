@@ -16,7 +16,7 @@ public class Worker {
     this.ill = ill;
   }
 
-  @Loggable
+  @Loggable(desc = "good good work")
   Object work() throws Exception {
     if (this.ill) {
       throw new Exception("I am ill, couldn't work");

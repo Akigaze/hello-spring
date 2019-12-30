@@ -30,6 +30,7 @@ public class TimingAspect {
   /*
     @annotation 指示器(Pointcut Designator PCD) 限定了只有添加了指定注解的方法才命中切点
     "&&" 连接多个切点指示器，扩展切点条件
+    可以在切点使用 @annotation 限制带有某些注解的方法
   */
   @Pointcut("execution(* com.aop.Worker.*(..)) && @annotation(com.aop.Loggable)")
   public void workerWorkingPointcut() {
@@ -47,13 +48,14 @@ public class TimingAspect {
     System.out.println(String.format("Factory end %s at %s", methodName, Utils.prettyNow()));
   }
 
-  @Around("workerWorkingPointcut()")
-  public Object workerLog(ProceedingJoinPoint point) throws Throwable {
+  // 在具体的切面使用 @annotation 使用变量接收方法上的注解
+  @Around("workerWorkingPointcut() && @annotation(loggable)")
+  public Object workerLog(ProceedingJoinPoint point, Loggable loggable) throws Throwable {
     String methodName = point.getSignature().getName();
     String name = ((Worker) (point.getTarget())).getName();
     Date startTime = new Date();
     System.out.println("-----------------");
-    System.out.println(String.format("Worker %s start %s at %s", name, methodName, Utils.prettyDate(startTime)));
+    System.out.println(String.format("Worker %s start %s at %s, with description %s", name, methodName, Utils.prettyDate(startTime), loggable.desc()));
     Object result = null;
     try {
       result = point.proceed();
