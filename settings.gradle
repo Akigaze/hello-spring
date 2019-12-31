@@ -8,4 +8,7 @@
  */
 
 rootProject.name = 'hello-spring'
-include 'xml', 'config', 'annotation', 'data'
+include 'xml'
+include 'config'
+include 'annotation'
+include 'data'

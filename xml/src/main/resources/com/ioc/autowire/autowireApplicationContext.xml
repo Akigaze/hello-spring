@@ -1,0 +1,41 @@
+<?com.xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="abstract-address" class="com.ioc.autowire.Address" abstract="true"
+        p:city="Guang Zhou"/>
+  <bean id="address" parent="abstract-address"
+        p:street="Wu Shan"
+        p:number="1024"/>
+  <!--<bean id="real-address" parent="abstract-address"-->
+        <!--p:street="Tian He"-->
+        <!--p:number="996"/>-->
+
+  <bean id="maYunYun" class="com.ioc.autowire.Boss"
+        p:name="Ma Yunyun"
+        p:age="55"
+        p:asset="10000000"/>
+
+  <!--bean标签的autowire属性可以设置利用已有bean注入属性的策略-->
+  <!--可选值有：no(default), byName, byType, constructor-->
+  <bean id="qi-lin-nan" class="com.ioc.autowire.Shop" autowire="byName" scope="prototype"
+        p:name="Qi Lin Nan Shop"
+        p:open="true"/>
+  <!--byType策略要求只能有一个符合要求的bean-->
+  <bean id="wu-shan" class="com.ioc.autowire.Shop" autowire="byType"
+        p:name="Wu Shan Shop"
+        p:open="false"/>
+  <bean id="tian-mao" class="com.ioc.autowire.Shop"
+        p:name="Tian Mao Shop"
+        p:open="true"
+        p:boss-ref="maYunYun"
+        p:address-ref="address"/>
+  <!-- autowire 可用 property + ref 代替 -->
+  <!--
+    <bean id="tian-tian-jian" class="com.ioc.autowire.Shop" scope="prototype"
+          p:name="Qi Lin Nan Shop"
+          p:open="true">
+      <property name="address" ref="address"/>
+    </bean>
+  -->
+</beans>

@@ -20,7 +20,7 @@ public class HelloSpring {
   }
 
   public static void main(String[] args) {
-    String configPath = "classpath:com/hello/applicationContext.xml";
+    String configPath = "classpath:com/ioc/hello/applicationContext.xml";
     ApplicationContext context = new ClassPathXmlApplicationContext(configPath);
 
     System.out.println("------ singleton bean -------");

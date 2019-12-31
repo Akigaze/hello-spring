@@ -23,7 +23,7 @@ public class ScopeSpring {
   }
 
   public static void main(String[] args){
-    String configPath = "classpath:com/scope/scopeApplicationContext.xml";
+    String configPath = "classpath:com/ioc/scope/scopeApplicationContext.xml";
     ApplicationContext context = new ClassPathXmlApplicationContext(configPath);
 
     System.out.println("\n------ prototype bean -------\n");
