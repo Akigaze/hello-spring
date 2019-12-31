@@ -1,0 +1,15 @@
+<?demo.qf.spring.xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="cdPlayer" class="demo.qf.spring.xml.CDPlayer"/>
+  <!--
+  bean标签还可以用于引入Java配置类中的bean
+  将class属性指定为对应的java配置类就能将配置类中的bean引入xml文件中
+  -->
+  <bean class="demo.qf.spring.xml.JavaConfigXmlConfig"/>
+  <!--c名称空间用于使用构造方法构建bean-->
+  <bean id="mozart" class="demo.qf.spring.xml.Musician" c:name="Mozart" c:cdPlayer-ref="player"/>
+</beans>
