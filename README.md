@@ -41,3 +41,10 @@ root
     setting.gradle
 
 #### 4. 重新导入项目，在根目录运行 gradle build
+
+#### 5. 模块依赖
+```groovy
+dependencies {
+//    compile project(":xml") //依赖其他子模块项目
+}
+```

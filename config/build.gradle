@@ -1,3 +1,3 @@
 dependencies {
-
+//    compile project(":xml") //依赖其他子模块项目
 }

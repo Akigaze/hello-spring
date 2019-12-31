@@ -6,7 +6,6 @@ dependencies {
     compile group: 'com.mchange', name: 'mchange-commons-java', version: '0.2.15'
     compile group: 'com.zaxxer', name: 'HikariCP', version: '3.2.0'
 
-
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
     testCompile group: 'com.h2database', name: 'h2', version: '1.4.197'
 }
